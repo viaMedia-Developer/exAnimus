@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+@font-face {
+	src: url('Mosk Thin 100.ttf');
+	font-family: 'Mosk 100';
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	width: 100%;
+}
+
+section#main {
+	width: 360px;
+	height: 640px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.15);
+}
+
+section#main header {
+	width: 95%;
+	margin: 5px auto 10px;
+	padding: 10px 0;
+	border-bottom: 2px solid #ECECEC;
+}
+
+section#main header h1 {
+	margin: 0;
+	margin-left: 5px;
+	font-family: "Mosk 100";
+	font-weight: 100;
+	font-size: 1.25em;
+	letter-spacing: 5px;
+	color: #CCCCCC;
+}
+
+
+
+section#main nav#main {
+	display: inline-block;
+	margin: 0 auto;
+	position: relative;
+	left: 45%;
+	transform: translateX(-50%);
+	transition: all ease-out 0.3s;
+}
+
+
+section#main nav#main a {
+	text-decoration: none;
+	font-family: "Lato";
+	font-weight: 300;
+	color: #CCCCCC;
+	padding: 10px;
+	margin: 0;
+	float: left;
+	transition: all ease-out 0.3s;
+}
+
+section#main nav#main a:hover {
+	color: #8a8a8a;
+	background-color: rgba(138, 138, 138, 0.05);
+}
+
+	section#main nav#main a:nth-child(1n) { border-right: 1px solid #ECECEC; }
+	section#main nav#main a:nth-child(2n) { border-left: 1px solid #ECECEC; border-right: none;}
+
+section#main nav#main a.active {
+	color: #8a8a8a;
+	background-color: rgba(138, 138, 138, 0.05);
+}
+
+
+
+
+
+
+
+
+
+section#secondary {
+	width: 100%;
+	height: 84%;
+	overflow-x: hidden;
+	/*margin-top: -15px;*/
+	position: relative;
+}
+
+section#secondary .main-content {
+	display: none;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+section#secondary .main-content.active {
+	display: block;
+}
+
+section#secondary div#quotes-wrapper {
+	width: 100%;
+	height: 80%;
+	/*position: relative;*/
+}
+
+section#secondary div#quotes-wrapper article#quote {
+	width: 100%;
+	height: 100%;
+}
+
+article#quote h1{
+	display: inline-block;
+	margin: 0 auto;
+	position: relative;
+    left: 48%;
+    transform: translateX(-50%);
+    padding: 100px 0 0;
+    border-bottom: 1px solid black;
+    font-size: 2em;
+    text-align: center;
+    transition: all ease-out 0.7s;
+    opacity: 1;
+}
+
+	.fade  {
+		animation-name: fade;
+		animation-duration: 0.7s;
+		animation-delay: 0s;
+		animation-timing-function: ease-out;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes fade {
+		0% {opacity: 1;}
+		100% {opacity: 0;}
+	}
+
+	.appear {
+		animation-name: appear;
+		animation-duration: 0.7s;
+		animation-delay: 0s;
+		animation-timing-function: ease-out;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes appear {
+		0% {opacity: 0;}
+		100% {opacity: 1;}
+	}
+
+article#quote p {
+	width: 85%;
+    text-align: center;
+    margin: 40px auto;
+    font-size: 1.25em;
+    transition: all ease-out 0.7s;
+    opacity: 1;
+}
+
+article#quote p:before, article#quote p:after { content: '"'; }
+
+
+	article#quote p.fade{}
+	article#quote h1.appear{}
+
+
+nav#control-wrapper {
+	display: inline-block;
+	margin: 0 auto;
+    position: relative;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*div.diagonal {
+	width: 50px;
+	border: 1px solid #8a8a8a;
+	position: relative;
+	left: 46%;
+	transform: rotate(-45deg) translate(-50%);
+}*/
+
+nav#control-wrapper a.controls {
+	display: inline-block;
+    text-decoration: none;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 1.25em;
+    color: #8a8a8a;
+    padding: 0 14px;
+    margin: 0;
+    transition: color ease-out 0.3s;
+}
+
+nav#control-wrapper a.controls:hover {
+	color: rgba(138, 138, 138, 0.35);
+}
+
+nav#control-wrapper a#random {
+	border-left: 1px solid #8a8a8a;
+	border-right: 1px solid #8a8a8a;
+}
+/*nav#control-wrapper a#preceding {position: relative; top: -10px}
+nav#control-wrapper a#succeeding {position: relative; top: 10px}*/
