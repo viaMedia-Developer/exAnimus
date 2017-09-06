@@ -2,6 +2,8 @@ var quotes = qte.quotes;
 
 var navLinks = document.querySelectorAll('nav#main a');
 
+var aproposSlide = document.getElementById('apropos');
+
 var getSiblings = (elem) => {
 	var siblings = [];
 	var sibling = elem.parentNode.firstChild;
@@ -24,6 +26,8 @@ navLinks.forEach((index) => {
 		currentSlide.classList.add('active');
 		var siblings = getSiblings(currentSlide);
 		siblings[0].classList.remove('active');
+
+		aproposSlide.style.paddingRight = aproposSlide.offsetWidth - aproposSlide.clientWidth + "px";
 	});
 });
 
@@ -106,3 +110,8 @@ var appear = (element) => {
 preceding.addEventListener('click', prevQuote);
 succeeding.addEventListener('click', nextQuote);
 randomButton.addEventListener('click', randomQuote);
+
+
+
+
+

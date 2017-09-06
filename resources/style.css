@@ -208,3 +208,72 @@ nav#control-wrapper a#random {
 }
 /*nav#control-wrapper a#preceding {position: relative; top: -10px}
 nav#control-wrapper a#succeeding {position: relative; top: 10px}*/
+
+
+
+
+
+
+
+section#apropos {
+	height: 98% !important;
+	overflow-y: auto !important;
+}
+
+section#apropos h1 {
+	margin-left: 10px;
+	font-family: 'Mosk 100';
+	font-weight: 100;
+	font-size: 1.5em;
+	letter-spacing: 5px;
+	color: #8a8a8a;
+}
+
+section#apropos div#versionInfo {
+	width: 105%;
+	overflow: hidden;
+	margin: 40px 0;
+	padding: 40px 0;
+	background-color: rgba(138, 138, 138, 0.05);
+}
+
+section#apropos div#versionInfo h2 {
+	margin: 0 0 20px 10px;
+	font-family: 'Mosk 100';
+	font-weight: 100;
+	/*font-size: 1.5em;*/
+	letter-spacing: 5px;
+	color: #8a8a8a;
+}
+
+section#apropos div#versionInfo h2 span {
+	color: #cccccc;
+}
+
+section#apropos p {
+	width: 90%;
+    margin-left: 10px;
+    font-family: 'Lato';
+    font-weight: 300;
+    line-height: 24px;
+}
+
+section#apropos ul.notesWrapper {
+	width: 90%;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+section#apropos ul.notesWrapper li {
+	font-family: 'Lato';
+	font-weight: 300;
+	padding-left: 30px;
+}
+
+section#apropos ul.notesWrapper li:before {
+	content: ' \2022 ';
+	color: #cacaca;
+	margin-left: -15px;
+	padding-right: 6px;
+}
