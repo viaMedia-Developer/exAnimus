@@ -10,7 +10,7 @@ var qte = {
 		},
 		{
 			number: "III",
-			quote: "Find that in life that you look forward to, that it makes everything else easier to deal with."
+			quote: "Find that in life which you look forward to, that it makes everything else easier to deal with."
 		},
 		{
 			number: "IV",

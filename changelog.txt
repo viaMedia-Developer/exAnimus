@@ -2,6 +2,14 @@ changelog / commit info
 
 [
 	Date: (9.7.17) 
+	Commit 1.4
+	Project Version: 1.0
+]
+# Corresponding links for socialMedia buttons added
+# Corrected an error in one of the quotes
+
+[
+	Date: (9.7.17) 
 	Commit 1.3 
 	Project Version: 1.0
 ]
