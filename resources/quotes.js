@@ -89,7 +89,7 @@ var qte = {
 			quote: "Things come and go, but the impact from an experience can last a lifetime"
 		},
 	]
-}
+};
 
 
 		// {

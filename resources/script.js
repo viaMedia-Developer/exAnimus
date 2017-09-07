@@ -110,8 +110,3 @@ var appear = (element) => {
 preceding.addEventListener('click', prevQuote);
 succeeding.addEventListener('click', nextQuote);
 randomButton.addEventListener('click', randomQuote);
-
-
-
-
-

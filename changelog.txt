@@ -1,0 +1,9 @@
+changelog / commit info
+
+[
+	Date: (9.7.17) 
+	Commit 1.2 
+	Project Version: 1.0
+]	
+# Added socialMedia icons: inserted into HTML DOM using external JS
+# Added fadeIn animation for when switching between .main-content sections

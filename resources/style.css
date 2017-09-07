@@ -100,6 +100,13 @@ section#secondary .main-content {
 
 section#secondary .main-content.active {
 	display: block;
+	opacity: 0;
+	animation: 0.5s ease-in forwards fadeIn; /*duration, timing-function, fill-mode, name*/
+}
+
+@keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
 }
 
 section#secondary div#quotes-wrapper {
@@ -160,6 +167,12 @@ article#quote p {
     font-size: 1.25em;
     transition: all ease-out 0.7s;
     opacity: 1;
+}
+
+article#quote p:before {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(135, 135, 135, 0.05);
 }
 
 article#quote p:before, article#quote p:after { content: '"'; }
@@ -277,3 +290,33 @@ section#apropos ul.notesWrapper li:before {
 	margin-left: -15px;
 	padding-right: 6px;
 }
+
+
+
+
+section#apropos ul.socialMedia {
+	display: table;
+	margin: 20px 0 30px;
+	padding: 0;
+	list-style-type: none;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+section#apropos ul.socialMedia li {
+	display: inline-block;
+	margin: 0;
+	float: left;
+}
+
+section#apropos ul.socialMedia li a {
+	display: block;
+	padding: 0 20px;
+} 
+
+section#apropos ul.socialMedia li a svg {
+	fill: rgba(135, 135, 135, 0.5);
+	transform: scale(2);
+}
+
