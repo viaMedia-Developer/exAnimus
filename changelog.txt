@@ -2,6 +2,13 @@ changelog / commit info
 
 [
 	Date: (9.7.17) 
+	Commit 1.5
+	Project Version: 1.0
+]
+# Link to ex Animus live GitHub page added to README.md
+
+[
+	Date: (9.7.17) 
 	Commit 1.4
 	Project Version: 1.0
 ]
