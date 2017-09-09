@@ -21,6 +21,14 @@ section#main {
 	box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.15);
 }
 
+@media screen and (max-width: 440px) {
+	section#main {
+		width: 100%;
+		height: 100%;
+		transform: translate(-50%, -50%) scale(0.92);
+	}
+}
+
 section#main header {
 	width: 95%;
 	margin: 5px auto 10px;
@@ -126,12 +134,16 @@ article#quote h1{
 	position: relative;
     left: 48%;
     transform: translateX(-50%);
-    padding: 100px 0 0;
+    padding: 120px 0 0;
     border-bottom: 1px solid black;
     font-size: 2em;
     text-align: center;
     transition: all ease-out 0.7s;
     opacity: 1;
+}
+
+@media screen and (max-width: 360px) {
+	article#quote h1 { padding-top: 80px; }
 }
 
 	.fade  {
@@ -191,6 +203,10 @@ nav#control-wrapper {
     transform: translateX(-50%);
 }
 
+@media screen and (max-width: 440px) {
+	nav#control-wrapper { top: 20px; }
+}
+
 /*div.diagonal {
 	width: 50px;
 	border: 1px solid #8a8a8a;
@@ -209,6 +225,10 @@ nav#control-wrapper a.controls {
     padding: 0 14px;
     margin: 0;
     transition: color ease-out 0.3s;
+}
+
+@media screen and (max-width: 440px) {
+	nav#control-wrapper a.controls { padding: 0 10px; }
 }
 
 nav#control-wrapper a.controls:hover {
@@ -231,6 +251,10 @@ nav#control-wrapper a#succeeding {position: relative; top: 10px}*/
 section#apropos {
 	height: 98% !important;
 	overflow-y: auto !important;
+}
+
+@media screen and (max-width: 440px) {
+	section#apropos { height: 95% !important; }
 }
 
 section#apropos h1 {

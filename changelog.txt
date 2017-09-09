@@ -1,6 +1,15 @@
 changelog / commit info
 
 [
+	Date: (9.9.17) 
+	Commit 1.6
+	Project Version: 1.1
+]
+# Project updated to v1.1
+# Adjustments made to interface's main body and elements when viewed on mobile screen
+# Changed some meta data
+
+[
 	Date: (9.7.17) 
 	Commit 1.5
 	Project Version: 1.0

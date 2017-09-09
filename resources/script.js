@@ -100,6 +100,12 @@ var prevQuote = () => {
 	}, 1000);
 }
 
+var setQuote = (index) => {
+	current = index;
+	quoteHeader.innerText = quotes[current].number;
+	quoteText.innerText = quotes[current].quote;
+} //function solely for console use
+
 var fade = (element) => {	
 	(element.classList.contains('appear') === true) ? element.classList.remove('appear') & element.classList.add('fade') : element.classList.add('fade');
 }
