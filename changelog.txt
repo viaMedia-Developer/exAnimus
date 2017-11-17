@@ -1,6 +1,17 @@
 changelog / commit info
 
 [
+	Date: 11.17.2017
+	Commit: 1.7
+	Project Version: 2.0
+]
+# Project updated to v2.0
+# Overhaul to visuals and UI
+# New Section added: devInfo + addition of new information
+
+
+
+[
 	Date: (9.9.17) 
 	Commit 1.6
 	Project Version: 1.1

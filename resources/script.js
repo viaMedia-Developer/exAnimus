@@ -1,118 +1,206 @@
-var quotes = qte.quotes;
+/*
+	All app elements listed here
+*/
+const landing = document.getElementById('landing'),
+	landing_h1 = document.querySelector('#landing .title'),
+	landing_h3 = document.querySelector('#landing .subtitle'),
+	landing_button = document.querySelector('#landing .cta'),
 
-var navLinks = document.querySelectorAll('nav#main a');
+	header = document.getElementsByTagName('header')[0],
+	header_h1 = document.querySelector('header h1'),
 
-var aproposSlide = document.getElementById('apropos');
+	nav = document.getElementsByTagName('nav')[0],
+	closeNav = document.querySelector('nav svg'),
+	navmenu = document.querySelector('nav .menu'),
+	menuItems = document.querySelectorAll('nav .menu li'),
 
-var getSiblings = (elem) => {
-	var siblings = [];
-	var sibling = elem.parentNode.firstChild;
-	for (; sibling; sibling = sibling.nextSibling) {
-		if(sibling.nodeType !== 1 || sibling == elem) continue;
-		siblings.push(sibling);
-	}
-	return siblings;
-}
+	sections = document.querySelectorAll('#sectionsWrapper section'),
+	section_Main = document.getElementById('main'),
+	section_About = document.getElementById('about'),
+	section_DevInfo =document.getElementById('devInfo'),
 
-navLinks.forEach((index) => {
-	var currentSlide = document.querySelector(index.getAttribute('href'));
-	index.addEventListener('click', function(e) {
-		e.preventDefault();
+	// Main Section Elements
+	toggleNav = document.querySelector('#main .toggleNav'),
+	quotesWrapper = document.getElementById('quotesWrapper'),
+	quotes_number = document.querySelector('#quotesWrapper h1'),
+	quotes_text = document.querySelector('#quotesWrapper p'),
 
-		var linkSibling = getSiblings(this);
-		(index.classList.contains('active') === true) ? index.classList.remove('active') : index.classList.add('active');
-		linkSibling[0].classList.remove('active');
+	mainControls = document.getElementById('controls'),
+	controls_next = document.querySelector('#controls #next'),
+	controls_prev = document.querySelector('#controls #previous'),
+	controls_rand = document.querySelector('#controls #random'),
 
-		currentSlide.classList.add('active');
-		var siblings = getSiblings(currentSlide);
-		siblings[0].classList.remove('active');
-
-		aproposSlide.style.paddingRight = aproposSlide.offsetWidth - aproposSlide.clientWidth + "px";
-	});
-});
-
-
+	/*
+		'back to main menu' buttons for About and DevInfo sections
+		backToMain[0] = about's button
+		backToMain[1] = devInfo's button 
+	*/
+	backToMain = [document.querySelector('#about .backToMain'), document.querySelector('#devInfo .backToMain'), ];
 
 
+	/*
+		DevInfo Section elements
+	*/
 
-const preceding = document.getElementById('preceding'),
-	succeeding = document.getElementById('succeeding'),
-	randomButton = document.getElementById('random');
+	version_val = document.querySelector('#version span'),
+	techUsed = document.getElementById('techUsed'),
+	techUsed_tags = document.querySelectorAll('#techUsed .tag'),
+	inspirations = document.getElementById('inspirations'),
+	inspirations_tags = document.querySelectorAll('#inspirations .tags'),
 
-var	quoteHeader = document.querySelector('#quote h1'),
-	quoteText = document.querySelector('#quote p'),
+	/*
+		Changelog stuff
+	*/
+	changeLog_button = document.getElementById('changeLog'),
+	versionRecord_wrapper = document.getElementById('versionRecord');
 
+
+/*
+	Core, continuously reused functions for project
+*/
+var hide = function(element) { element.style.display = 'none'; },
+    display = function(element) { element.style.display = 'block'; },
+    opaNone = function(element) { element.style.opacity = 0; },
+    opaOne = function(element) { element.style.opacity = 1; },
+    getSiblings = (elem) => {
+		var siblings = [];
+		var sibling = elem.parentNode.firstChild;
+		for (; sibling; sibling = sibling.nextSibling) {
+			if(sibling.nodeType !== 1 || sibling == elem) continue;
+				siblings.push(sibling);
+			}
+		return siblings;
+	},
+	quotes = qte.quotes,
 	pickRandom = () => { 
 		number = Math.round(Math.random() * quotes.length);
 		return number;
 	},
-	random = pickRandom(),
-	current;
- 	
-
-var loadQuote = () => {
-	quoteHeader.innerText = quotes[random].number;
-	quoteText.innerText = quotes[random].quote;
-	current = random;
-}; 
-window.onload = () => { loadQuote(); }
-
-var randomQuote = () => {
-	fade(quoteHeader); fade(quoteText);
-	current = pickRandom();
-	setTimeout(function() {
-		quoteHeader.innerText = quotes[current].number;
-		quoteText.innerText = quotes[current].quote;
-	}, 800);
-	setTimeout(function() {
-		appear(quoteHeader); appear(quoteText);
-	}, 1000);
-}
-
-var nextQuote = () => {
-	fade(quoteHeader); fade(quoteText);
-	current++;
-	if (current > (quotes.length - 1)) {
-		current = 0;
-	}
-	setTimeout(function() {
-		quoteHeader.innerText = quotes[current].number;
-		quoteText.innerText = quotes[current].quote;
-	}, 800);
-	setTimeout(function() {
-		appear(quoteHeader); appear(quoteText);
-	}, 1000);
+	randnum = pickRandom(),
+	current = randnum;
 	
-}
 
-var prevQuote = () => {
-	fade(quoteHeader); fade(quoteText);
-	current--;
-	if (current <= 0) {
-		current = 0;
+
+
+/*
+	Core Functions - Functionality 
+	-- Parsing through Quotes --
+*/
+var loadQuote = () => {
+		quotes_number.innerText = quotes[randnum].number;
+		quotes_text.innerText = quotes[randnum].quote;
+		current = randnum;
+	},
+	loadRandom = () => {
+		opaNone(quotes_number); opaNone(quotes_text);
+		current = pickRandom();
+		setTimeout(_=> {
+			quotes_number.innerText = quotes[current].number;
+			quotes_text.innerText = quotes[current].quote;
+		}, 600)
+		setTimeout(_=> {
+			opaOne(quotes_number); opaOne(quotes_text);
+		}, 800)
+	},
+	loadNext = () => {
+		opaNone(quotes_number); opaNone(quotes_text);
+		current++;
+		if (current > (quotes.length - 1)) {current = 0;}
+		setTimeout(_=> {
+			quotes_number.innerText = quotes[current].number;
+			quotes_text.innerText = quotes[current].quote;
+		}, 600);
+		setTimeout(_=> {
+			opaOne(quotes_number); opaOne(quotes_text);
+		}, 800)
+	},
+	loadPrev = () => {
+		opaNone(quotes_number); opaNone(quotes_text);
+		current--;
+		if (current <= 0) { current = 0; }
+		setTimeout(_=> {
+			quotes_number.innerText = quotes[current].number;
+			quotes_text.innerText = quotes[current].quote;
+		}, 600);
+		setTimeout(_=> {
+			opaOne(quotes_number); opaOne(quotes_text);
+		}, 800)
 	}
-	setTimeout(function() {
-		quoteHeader.innerText = quotes[current].number;
-		quoteText.innerText = quotes[current].quote;
-	}, 800);
-	setTimeout(function() {
-		appear(quoteHeader); appear(quoteText);
-	}, 1000);
-}
 
-var setQuote = (index) => {
-	current = index;
-	quoteHeader.innerText = quotes[current].number;
-	quoteText.innerText = quotes[current].quote;
-} //function solely for console use
+/* Function Assignment */
+	//Sets a random quote to load on page load and reload
+window.onload = () => { loadQuote(); }
+controls_next.addEventListener('click', loadNext);
+controls_prev.addEventListener('click', loadPrev);
+controls_rand.addEventListener('click', loadRandom);
 
-var fade = (element) => {	
-	(element.classList.contains('appear') === true) ? element.classList.remove('appear') & element.classList.add('fade') : element.classList.add('fade');
-}
-var appear = (element) => {
-	(element.classList.contains('fade') === true) ? element.classList.remove('fade') & element.classList.add('appear') : element.classList.add('appear');
-}
 
-preceding.addEventListener('click', prevQuote);
-succeeding.addEventListener('click', nextQuote);
-randomButton.addEventListener('click', randomQuote);
+
+
+/*
+	Core Functions - Functionality 
+	-- Opening and Closing the Navigation Menu -- 
+	-- Back to Main button Functionality --
+	-- Menu Items Functionality --
+*/
+
+/* -- Opening and Closing the Navigation Menu -- */
+var openNavi = () => {
+		display(nav);
+		setTimeout(_=> {
+			opaOne(nav);
+		}, 100)
+	},
+	closeNavi = () => {
+		opaNone(nav);
+		setTimeout(_=> {
+			hide(nav);
+		}, 800)
+	};
+
+toggleNav.addEventListener('click', openNavi);
+closeNav.addEventListener('click', closeNavi);
+
+
+
+/* -- Back to Main button Functionality -- */
+backToMain.forEach((current) => {
+	current.addEventListener('click', function() {
+		var that = this.parentElement;
+		opaNone(that);
+		setTimeout(function() {
+			hide(that);
+		}, 800);
+		setTimeout(function() {
+			opaNone(section_Main);
+			display(section_Main);
+		}, 900);
+		setTimeout(function() {
+			opaOne(section_Main);
+		}, 1000);
+	})
+})
+
+
+
+
+/*	-- Menu Items Functionality -- */
+menuItems.forEach((current, index) => {
+	current.addEventListener('click', _=> {
+		var selectedSection = sections[index];
+		var otherSections = getSiblings(selectedSection);
+		otherSections.forEach((current) => {
+			hide(current);
+		})
+		display(selectedSection);
+		setTimeout(_=> {
+			opaNone(nav);
+		}, 100)
+		setTimeout(_=> {
+			hide(nav);
+		}, 900)
+		setTimeout(_=> {
+			opaOne(selectedSection);
+		}, 1000)
+	})
+})
