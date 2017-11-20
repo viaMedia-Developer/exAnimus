@@ -236,7 +236,6 @@ window.addEventListener('load', function() {
 	setHeight = getComputedStyle(versionRecord_wrapper, null).height;
 	versionRecord_wrapper.style.height = 0;
 	body.style.setProperty('--setHeight', setHeight);
-	// console.log(body.getPropertyValue('--setHeight'));
 	hide(section_DevInfo);
 
 	setTimeout(_=> {

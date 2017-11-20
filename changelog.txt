@@ -2,6 +2,13 @@ changelog / commit info
 
 [
 	Date: 11.20.2017
+	Commit: 1.8.5
+	Project Version: 2.1
+]
+# Added changes to versionlog within app itself (I had forgot to add originally)
+
+[
+	Date: 11.20.2017
 	Commit: 1.8
 	Project Version: 2.1
 ]
