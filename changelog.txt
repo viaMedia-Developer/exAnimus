@@ -1,6 +1,16 @@
 changelog / commit info
 
 [
+	Date: 11.20.2017
+	Commit: 1.8
+	Project Version: 2.1
+]
+# Changelog section of Developer Info is now toggleable via button
+# fade in animation upon loading the project
+# (5) New entries !
+
+
+[
 	Date: 11.17.2017
 	Commit: 1.7
 	Project Version: 2.0

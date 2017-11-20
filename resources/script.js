@@ -1,7 +1,10 @@
 /*
 	All app elements listed here
 */
-const landing = document.getElementById('landing'),
+const 
+	body = document.getElementsByTagName('body')[0],
+	overlay = document.getElementById('overlay'),
+	landing = document.getElementById('landing'),
 	landing_h1 = document.querySelector('#landing .title'),
 	landing_h3 = document.querySelector('#landing .subtitle'),
 	landing_button = document.querySelector('#landing .cta'),
@@ -51,14 +54,15 @@ const landing = document.getElementById('landing'),
 	/*
 		Changelog stuff
 	*/
-	changeLog_button = document.getElementById('changeLog'),
-	versionRecord_wrapper = document.getElementById('versionRecord');
+	changeLog_button = document.getElementById('changelog'),
+	versionRecord_wrapper = document.getElementsByClassName('versionRecord')[0];
 
 
 /*
 	Core, continuously reused functions for project
 */
-var hide = function(element) { element.style.display = 'none'; },
+var 
+	hide = function(element) { element.style.display = 'none'; },
     display = function(element) { element.style.display = 'block'; },
     opaNone = function(element) { element.style.opacity = 0; },
     opaOne = function(element) { element.style.opacity = 1; },
@@ -80,13 +84,12 @@ var hide = function(element) { element.style.display = 'none'; },
 	current = randnum;
 	
 
-
-
 /*
 	Core Functions - Functionality 
 	-- Parsing through Quotes --
 */
-var loadQuote = () => {
+var 
+	loadQuote = () => {
 		quotes_number.innerText = quotes[randnum].number;
 		quotes_text.innerText = quotes[randnum].quote;
 		current = randnum;
@@ -203,4 +206,58 @@ menuItems.forEach((current, index) => {
 			opaOne(selectedSection);
 		}, 1000)
 	})
+})
+
+
+
+
+
+
+
+
+
+/*
+	Developer Info Functionalities Section
+	- Changelog button toggling version's list
+*/
+
+window.addEventListener('load', function() {
+	/*
+		This code allows for the correct height of the versionWrapper
+		when it is filled with all of it's entries to be saved, then
+		save that value, set the height of the wrapper to 0 (so that
+		it can be toggled open) and sets that value equal to a variable
+		that will be used in the css
+
+		This code also sets up the fade in animation whenever project is
+		loaded or reloaded
+	*/
+	display(section_DevInfo);
+	setHeight = getComputedStyle(versionRecord_wrapper, null).height;
+	versionRecord_wrapper.style.height = 0;
+	body.style.setProperty('--setHeight', setHeight);
+	// console.log(body.getPropertyValue('--setHeight'));
+	hide(section_DevInfo);
+
+	setTimeout(_=> {
+		display(section_Main);
+		opaOne(section_Main);
+	}, 900);
+	setTimeout(_=> {
+		overlay.classList.add('fade');
+		display(section_Main);
+	}, 1000);
+	setTimeout(_=> {
+		hide(overlay);
+	}, 2000);
+})
+
+var setHeight;
+console.log(setHeight);
+// setTimeout(_=> {
+// 	versionRecord_wrapper.style.height = 0;
+// })
+
+changeLog_button.addEventListener('click', function() {
+	versionRecord_wrapper.classList.toggle('opened');
 })

@@ -88,5 +88,33 @@ var qte = {
 			number: "XXII",
 			quote: "Things come and go, but the impact from an experience can last a lifetime"
 		},
+		{
+			number: "XXIII",
+			quote: "Focus on making progress: not how much progress is made"
+		},
+		{
+			number: "XXIV",
+			quote: "It does not matter how long it's taken you to begin: as long as you have now begun"
+		},
+		{
+			number: "XXV",
+			quote: "The stepping stones to success consist of determination, conviction and true effort"
+		},
+		{
+			number: "XXVI",
+			quote: "Don't reinvent the wheel. Invent new ways to use it"
+		},
+		{
+			number: "XXVII",
+			quote: "Focus on high, repeated accumulation of knowledge impedes the execution of action"
+		}
 	]
 };
+
+
+/*
+		{
+			number: "",
+			quote: ""
+		},
+*/
