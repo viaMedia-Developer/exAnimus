@@ -93,6 +93,7 @@ var
 		quotes_number.innerText = quotes[randnum].number;
 		quotes_text.innerText = quotes[randnum].quote;
 		current = randnum;
+		return current;
 	},
 	loadRandom = () => {
 		opaNone(quotes_number); opaNone(quotes_text);
@@ -252,7 +253,7 @@ window.addEventListener('load', function() {
 })
 
 var setHeight;
-console.log(setHeight);
+// console.log(setHeight);
 // setTimeout(_=> {
 // 	versionRecord_wrapper.style.height = 0;
 // })

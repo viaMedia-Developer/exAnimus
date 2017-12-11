@@ -1,5 +1,5 @@
 ###### Update 2.2
-- 
+- Edits to app layout on desktop screen widths
 
 ###### Update 2.1
 - New fade in animation upon project loading

@@ -1,11 +1,21 @@
 changelog / commit info
 
 [
+	Date: 11.24.2017
+	Commit: 1.9
+	Project Version: 2.2
+]
+# Adjustments made to project's UI for desktop / tablet screen sizes
+# Changed the project's title in the index.html head
+
+
+[
 	Date: 11.20.2017
 	Commit: 1.8.5
 	Project Version: 2.1
 ]
 # Added changes to versionlog within app itself (I had forgot to add originally)
+
 
 [
 	Date: 11.20.2017

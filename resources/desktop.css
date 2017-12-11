@@ -1,0 +1,52 @@
+/*
+	File specifically for configuring UI for Desktop Screen Widths:
+	Anything beyond 768px in Width
+*/
+
+@media screen and (min-width: 760px) {
+	nav ul {
+		display: table;
+		margin: 10px auto 30px;
+	}
+
+	nav ul li {
+		text-align: center;
+	}
+
+	section button {
+		// display: block;
+		// margin: 40px auto 20px !important;
+		top: 40px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	section#main div#quotesWrapper {
+		width: 70%;
+	}
+
+	section#main ul#controls {
+		margin: 120px auto;
+		position: relative;
+		right: 0;
+		padding: 0;
+	}
+
+	section#main ul#controls li {
+		display: inline-block;
+		margin: 0 20px;
+	}
+
+	section#devInfo h1 {
+		text-align: center;
+	}
+
+	section#devInfo div#infoWrapper {
+		display: table;
+		margin: 0 auto;
+	}
+
+	section#devInfo div.versionRecord div.version h1 {
+		text-align: left;
+	}
+}
