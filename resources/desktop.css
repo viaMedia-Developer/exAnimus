@@ -22,13 +22,16 @@
 	}
 
 	section#main div#quotesWrapper {
-		width: 70%;
+		width: 50%;
 	}
 
 	section#main ul#controls {
 		margin: 120px auto;
-		position: relative;
-		right: 0;
+		// position: relative;
+		bottom: 120px;
+		right: auto;
+		left: 50%;
+		transform: translateX(-50%);
 		padding: 0;
 	}
 
@@ -38,12 +41,33 @@
 	}
 
 	section#devInfo h1 {
+		margin-top: 100px;
 		text-align: center;
+	}
+
+	section#devInfo h3 {
+		margin: 30px 20px 20px;
+		text-align: center;
+	}
+
+	section#devInfo button#changelog {
+		transform: translateX(-60%);
 	}
 
 	section#devInfo div#infoWrapper {
 		display: table;
 		margin: 0 auto;
+	}
+
+	section#devInfo ul#techUsed {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	section#devInfo ul#inspirations {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
 	}
 
 	section#devInfo div.versionRecord div.version h1 {

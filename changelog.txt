@@ -1,6 +1,13 @@
 changelog / commit info
 
 [
+	Date: 12.14.2017
+	Commit: 2.0
+	Project Version: 2.3
+]
+# More adjustment's made to the project's UI for Desktop screen sizes
+
+[
 	Date: 11.24.2017
 	Commit: 1.9
 	Project Version: 2.2
